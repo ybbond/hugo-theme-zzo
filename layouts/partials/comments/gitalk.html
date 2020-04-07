@@ -5,8 +5,8 @@
   var gitalk = new Gitalk({
     id: '{{ .Date }}',
     title: '{{ .Title }}',
-    clientID: '{{ .Site.Params.gitalk.clientId }}',
-    clientSecret: '{{ .Site.Params.gitalk.clientSecret }}',
+    clientID: '{{ getenv "GITHUB_GITALK_CLIENT_ID" }}',
+    clientSecret: '{{ getenv "GITHUB_GITALK_CLIENT_SECRET" }}',
     repo: '{{ .Site.Params.gitalk.repo }}',
     owner: '{{ .Site.Params.gitalk.owner }}',
     admin: ['{{ .Site.Params.gitalk.owner }}'],
